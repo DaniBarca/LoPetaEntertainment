@@ -9,6 +9,6 @@ public class bolaloca : MonoBehaviour {
     }
 	
 	void Update () {
-        transform.position = Vector3.up * (Time.deltaTime * Mathf.Sin(t += 0.5f));
+        transform.position = Vector3.up * 20f * (Time.deltaTime * Mathf.Sin(t += 0.5f));
     }
 }
