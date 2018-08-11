@@ -303,7 +303,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\bolaloca.cs" />
+    <Compile Include="Assets\BadGuy.cs" />
+    <Compile Include="Assets\GoodGuy.cs" />
+    <Compile Include="Assets\GoodGuyGun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
