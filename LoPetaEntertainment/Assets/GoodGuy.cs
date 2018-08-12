@@ -23,13 +23,37 @@ public class GoodGuy : MonoBehaviour {
         healthBar.curHealth = life;
         healthBar.curIce = gun.ammo;
 
+        Camera cam = MainCamera.Instance.GetComponent<Camera>();
+
+        Vector3 world_mousePos = cam.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * MainCamera.Instance.transform.position.y);
+        transform.LookAt(Vector3.Scale(Vector3.forward + Vector3.right, world_mousePos));
+        transform.eulerAngles = Vector3.Scale(transform.eulerAngles, Vector3.up);
+
+        Vector3 v_keys = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical")).normalized;
+        Vector3 v_mouse = (world_mousePos - transform.position);
+        v_mouse.y = 0.0f;
+        v_mouse.Normalize();    
+        Vector3 v = transform.InverseTransformPoint(transform.position + v_keys);
+        v.y = 0.0f;
+        v.Normalize();
+        Debug.Log("keys:" + v_keys + "mouse:" + v_mouse + "v:" + v);
+        animator.SetFloat("dx", v.x);
+        animator.SetFloat("dy", v.z);
+
+       
+
         if (Input.GetButton("Fire1"))
         {
             gun.Shoot();
         }
 
-        animator.SetFloat("dx", Input.GetAxis("Horizontal"));
-        animator.SetFloat("dy", Input.GetAxis("Vertical"));
+    
+
+        
+
+
+
+
 
         //if (!Mathf.Approximately(0.0f, Input.GetAxis("Horizontal")) || !Mathf.Approximately(0.0f, Input.GetAxis("Vertical")) )
         //{
@@ -40,9 +64,8 @@ public class GoodGuy : MonoBehaviour {
         //    );
         //}
 
-        Vector3 world_mousePos = MainCamera.Instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition + Vector3.forward * MainCamera.Instance.transform.position.y);
-        transform.LookAt(Vector3.Scale(Vector3.forward + Vector3.right, world_mousePos));
-        transform.eulerAngles = Vector3.Scale(transform.eulerAngles, Vector3.up);
+        
+       
     }
 
     void OnEnemyHit(BadGuy enemy)
