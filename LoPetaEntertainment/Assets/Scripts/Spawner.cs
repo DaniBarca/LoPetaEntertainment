@@ -12,15 +12,24 @@ public class Spawner : MonoBehaviour {
     public int startWait;
     public bool stop;
 
+    private float startTime;
+    private float firstLevelSpawnMostWait;
+    public float lastLevelStartWait;
+    public float lastLevelTime;
+
     int randEnemy;
 
 	// Use this for initialization
 	void Start () {
+        startTime = Time.time;
+        firstLevelSpawnMostWait = spawnMostWait;
+        lastLevelTime = startTime + lastLevelTime;
         StartCoroutine(waitSpawner());
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        spawnMostWait = Mathf.Lerp(firstLevelSpawnMostWait, lastLevelStartWait, (Time.time - startTime) / (lastLevelTime - startTime));
         spawnWait = Random.Range(spawnLeastWait, spawnMostWait);
 	}
 
@@ -29,9 +38,9 @@ public class Spawner : MonoBehaviour {
         yield return new WaitForSeconds(startWait);
         while (!stop)
         {
-
-            Vector3 spawnPosition = this.transform.position;
-            Instantiate(fokis[randEnemy], spawnPosition + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
+            Vector3 spawnPosition = new Vector3(Random.Range(0.0f,128.0f), 0.0f, Random.Range(0.0f,128.0f));
+            GameObject lastInstance = Instantiate(fokis[randEnemy], spawnPosition, gameObject.transform.rotation);
+            lastInstance.SetActive(true);
             yield return new WaitForSeconds(spawnWait);
         }
     }

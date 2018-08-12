@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 3496e141f68488d489a5976aa579feef
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Lizard
+    100002: LizardHead
+    100004: LizardLFrontLegCollarbone
+    100006: LizardLFrontLegDigit11
+    100008: LizardLFrontLegDigit31
+    100010: LizardLFrontLegLower
+    100012: LizardLFrontLegPalm1
+    100014: LizardLFrontLegPalm2
+    100016: LizardLFrontLegPlatform
+    100018: LizardLFrontLegUpper
+    100020: LizardNeck
+    100022: LizardPelvis
+    100024: LizardRFrontLegCollarbone
+    100026: LizardRFrontLegDigit11
+    100028: LizardRFrontLegDigit31
+    100030: LizardRFrontLegLower
+    100032: LizardRFrontLegPalm1
+    100034: LizardRFrontLegPalm2
+    100036: LizardRFrontLegPlatform
+    100038: LizardRFrontLegUpper
+    100040: LizardRibcage
+    100042: LizardSpine1
+    100044: LizardSpine2
+    100046: LizardSpine3
+    100048: LizardTail1
+    100050: Sphere001
+    100052: //RootNode
+    400000: Lizard
+    400002: LizardHead
+    400004: LizardLFrontLegCollarbone
+    400006: LizardLFrontLegDigit11
+    400008: LizardLFrontLegDigit31
+    400010: LizardLFrontLegLower
+    400012: LizardLFrontLegPalm1
+    400014: LizardLFrontLegPalm2
+    400016: LizardLFrontLegPlatform
+    400018: LizardLFrontLegUpper
+    400020: LizardNeck
+    400022: LizardPelvis
+    400024: LizardRFrontLegCollarbone
+    400026: LizardRFrontLegDigit11
+    400028: LizardRFrontLegDigit31
+    400030: LizardRFrontLegLower
+    400032: LizardRFrontLegPalm1
+    400034: LizardRFrontLegPalm2
+    400036: LizardRFrontLegPlatform
+    400038: LizardRFrontLegUpper
+    400040: LizardRibcage
+    400042: LizardSpine1
+    400044: LizardSpine2
+    400046: LizardSpine3
+    400048: LizardTail1
+    400050: Sphere001
+    400052: //RootNode
+    2100000: foki
+    4300000: Sphere001
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Sphere001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

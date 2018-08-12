@@ -32,8 +32,6 @@ public class EnemyController : MonoBehaviour {
                 anim.SetBool("isWalking", false);
                 anim.SetBool("isAttacking", true);
                 FaceTarget();
-
-
             }
         }
     }

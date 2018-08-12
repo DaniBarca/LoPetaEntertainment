@@ -9,6 +9,10 @@ public class TileSpawner : MonoBehaviour
 	public float tileMapBegin;
 	public float tileMapEnd;
 
+    public void UpdateNavigation()
+    {
+        
+    }
 
 	public void SpawnIce()
 	{

@@ -379,6 +379,7 @@
   <ItemGroup>
     <None Include="Assets\3rdParty\LowPolyWater_Pack\LowPoly Island\Credits.txt" />
     <None Include="Assets\3rdParty\LowPolyWater_Pack\Shaders\WaterShaded.shader" />
+    <None Include="Assets\3rdParty\Realistic Hail Set\README.txt" />
     <None Include="Assets\Material\Ice.shader" />
     <None Include="Assets\Material\derp.shader" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />

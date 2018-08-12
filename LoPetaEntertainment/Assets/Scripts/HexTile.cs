@@ -56,7 +56,7 @@ public class HexTile : MonoBehaviour
 		
 		Vector2 angle = (rotationAmplitude * Mathf.Cos( ts * rotationSpeed ) * intensity + initialHeight + stepUpon*pressedHeightModifier) * rotationAxis;
 
-		transform.rotation = Quaternion.Euler(angle.x+90.0f, 0.0f, angle.y);
+		transform.rotation = Quaternion.Euler(angle.x, 0.0f, angle.y);
 	}
 
 	private void OnTriggerEnter(Collider other)
