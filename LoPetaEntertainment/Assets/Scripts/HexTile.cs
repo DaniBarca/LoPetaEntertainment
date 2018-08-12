@@ -73,4 +73,9 @@ public class HexTile : MonoBehaviour
 			isStep = false;
 		}
 	}
+
+    public void IVEBEENHIT()
+    {
+        gameObject.SetActive(false);
+    }
 }

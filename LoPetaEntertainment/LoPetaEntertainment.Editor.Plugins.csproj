@@ -379,6 +379,8 @@
     <None Include="Assets\3rdParty\Realistic Hail Set\README.txt" />
     <None Include="Assets\Material\Ice.shader" />
     <None Include="Assets\Material\derp.shader" />
+    <None Include="Assets\Sounds\demo_90_-_flat_shading.txt" />
+    <None Include="Assets\eskimo\skimo tex\NewSurfaceShader.shader" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />

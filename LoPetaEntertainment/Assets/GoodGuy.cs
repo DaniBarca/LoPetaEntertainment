@@ -8,26 +8,37 @@ public class GoodGuy : MonoBehaviour {
     ParticleSystem gun_ps;
     public GoodGuyGun gun;
 
+    public Animator animator;
+
     public float life = 100.0f;
+
+    public HealthBar healthBar;
 
     void Start () {
         gun.OnEnemyHit += OnEnemyHit;
+        animator = GetComponent<Animator>();
     }
 
 	void Update () {
+        healthBar.curHealth = life;
+        healthBar.curIce = gun.ammo;
+
         if (Input.GetButton("Fire1"))
         {
             gun.Shoot();
         }
 
-        if (!Mathf.Approximately(0.0f, Input.GetAxis("Horizontal")) || !Mathf.Approximately(0.0f, Input.GetAxis("Vertical")) )
-        {
-            transform.position += new Vector3(
-                Input.GetAxis("Horizontal") * Time.deltaTime * speed,
-                0.0f,
-                Input.GetAxis("Vertical") * Time.deltaTime * speed
-            );
-        }
+        animator.SetFloat("dx", Input.GetAxis("Horizontal"));
+        animator.SetFloat("dy", Input.GetAxis("Vertical"));
+
+        //if (!Mathf.Approximately(0.0f, Input.GetAxis("Horizontal")) || !Mathf.Approximately(0.0f, Input.GetAxis("Vertical")) )
+        //{
+        //    transform.position += new Vector3(
+        //        Input.GetAxis("Horizontal") * Time.deltaTime * speed,
+        //        0.0f,
+        //        Input.GetAxis("Vertical") * Time.deltaTime * speed
+        //    );
+        //}
 
         Vector3 world_mousePos = MainCamera.Instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition + Vector3.forward * MainCamera.Instance.transform.position.y);
         transform.LookAt(Vector3.Scale(Vector3.forward + Vector3.right, world_mousePos));

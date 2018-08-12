@@ -314,10 +314,13 @@
     <Compile Include="Assets\3rdParty\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\3rdParty\Realistic Hail Set\Demo Scene\Scripts\DemoSceneController.cs" />
     <Compile Include="Assets\BadGuy.cs" />
+    <Compile Include="Assets\blowerps.cs" />
+    <Compile Include="Assets\Eskimo Bien\HealthBar.cs" />
     <Compile Include="Assets\Foky\Enemy.cs" />
     <Compile Include="Assets\Foky\EnemyController.cs" />
     <Compile Include="Assets\GoodGuy.cs" />
     <Compile Include="Assets\GoodGuyGun.cs" />
+    <Compile Include="Assets\Inverse Kinematics\Scripts\InverseKinematics.cs" />
     <Compile Include="Assets\MainCamera.cs" />
     <Compile Include="Assets\Scripts\HexTile.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
@@ -332,6 +335,8 @@
     <None Include="Assets\3rdParty\Realistic Hail Set\README.txt" />
     <None Include="Assets\Material\Ice.shader" />
     <None Include="Assets\Material\derp.shader" />
+    <None Include="Assets\Sounds\demo_90_-_flat_shading.txt" />
+    <None Include="Assets\eskimo\skimo tex\NewSurfaceShader.shader" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />
