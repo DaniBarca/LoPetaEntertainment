@@ -25,8 +25,6 @@ public class GoodGuy : MonoBehaviour {
                 0.0f,
                 Input.GetAxis("Vertical") * Time.deltaTime * speed
             );
-
-            MainCamera.Instance.UpdateFollowCamera();
         }
 
         Vector3 world_mousePos = MainCamera.Instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition + Vector3.forward * MainCamera.Instance.transform.position.y);

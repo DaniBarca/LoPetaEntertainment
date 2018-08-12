@@ -126,10 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a41100eaec1d842fa9d4d0a57548b327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavingStrenght: 0.35
+  wavingStrenght: 0.3
   waveSpeed: 0.4
   rotationAmplitude: 5
   rotationSpeed: 5
   intensity: 1
-  pressedHeightModifier: -0.25
+  pressedHeightModifier: -0.2
   sinkSpeed: 10

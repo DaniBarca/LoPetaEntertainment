@@ -17,9 +17,9 @@ public class MainCamera : MonoBehaviour
 
     private Vector3 originPosition;
     private Vector3 targetPosition;
-    private Vector3 lastUpdatePosition;
-    private float lastUpdateTime;
-    private float cameraLerpTime = 0.05f;
+    public float cameraLerpSpeed = 20.0f;
+    public float cameraFollowZDelay = 5.0f;
+    public float cameraFollowRotationZDelay = 5.0f;
 
     private void Awake()
     {
@@ -30,34 +30,22 @@ public class MainCamera : MonoBehaviour
     void Start () {
         originPosition = transform.position - Vector3.forward * 10.0f;
         targetPosition = originPosition;
-        lastUpdatePosition = targetPosition;
-        lastUpdateTime = Time.time;
     }
 
     void Update () {
-        transform.LookAt(follow.transform);
-        transform.eulerAngles = Vector3.Scale(Vector3.right, transform.rotation.eulerAngles);
-
-        transform.position = Vector3.Lerp(lastUpdatePosition, targetPosition, (Time.time - lastUpdateTime) / cameraLerpTime);
-    }
-
-    public void UpdateFollowCamera()
-    {
-        //Vector2 relativeXY = new Vector2(
-        //    0.5f - 0.5f * Mathf.Cos(Mathf.PI * 0.5f + Mathf.PI * (-0.5f + (follow.transform.position.x + ICEBERG_SIZE * 0.5f) / ICEBERG_SIZE)),
-        //    0.5f - 0.5f * Mathf.Cos(Mathf.PI * 0.5f + Mathf.PI * (-0.5f + (follow.transform.position.z + ICEBERG_SIZE * 0.5f) / ICEBERG_SIZE))
-        //);
-
-        //targetPosition = new Vector3(
-        //    originPosition.x - Mathf.Lerp(-CAMERA_POSITION_RANGE_HORIZONTAL, CAMERA_POSITION_RANGE_HORIZONTAL, relativeXY.x),
-        //    transform.position.y,
-        //    originPosition.z - Mathf.Lerp(-CAMERA_POSITION_RANGE_VERTICAL, CAMERA_POSITION_RANGE_VERTICAL, relativeXY.y)
-        //);
-
         targetPosition = Vector3.Scale(Vector3.up, transform.position) + Vector3.Scale(Vector3.right + Vector3.forward, follow.transform.position);
-        targetPosition.z -= 15.0f;
+        targetPosition.z -= cameraFollowZDelay;
 
-        lastUpdatePosition = transform.position;
-        lastUpdateTime = Time.time;
+        Vector3 lookAtPosition = new Vector3(
+            follow.transform.position.x,
+            0.0f,
+            follow.transform.position.z - cameraFollowRotationZDelay
+        );
+        Quaternion targetRotation = Quaternion.FromToRotation(transform.forward, (lookAtPosition - transform.position).normalized);
+
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * cameraLerpSpeed);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * cameraLerpSpeed);
     }
+
 }
