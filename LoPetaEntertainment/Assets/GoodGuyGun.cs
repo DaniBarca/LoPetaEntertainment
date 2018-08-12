@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GoodGuyGun : MonoBehaviour
 {
+    public float bulletDamage = 10;
     public ParticleSystem gun_ps;
     public System.Action<BadGuy> OnEnemyHit;
 
@@ -12,7 +13,7 @@ public class GoodGuyGun : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.tag == "BadGuy")
+        if (other.layer == LayerMask.NameToLayer("BadGuy"))
         {
             OnEnemyHit(other.GetComponent<BadGuy>());
         }

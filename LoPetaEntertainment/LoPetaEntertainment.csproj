@@ -303,11 +303,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\3rdParty\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\BadGuy.cs" />
     <Compile Include="Assets\GoodGuy.cs" />
     <Compile Include="Assets\GoodGuyGun.cs" />
+    <Compile Include="Assets\MainCamera.cs" />
+    <Compile Include="Assets\Scripts\HexTile.cs" />
+    <Compile Include="Assets\Scripts\RemoveIce.cs" />
+    <Compile Include="Assets\Scripts\TileSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\3rdParty\LowPolyWater_Pack\LowPoly Island\Credits.txt" />
+    <None Include="Assets\3rdParty\LowPolyWater_Pack\Shaders\WaterShaded.shader" />
+    <None Include="Assets\Material\Ice.shader" />
+    <None Include="Assets\Material\derp.shader" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />

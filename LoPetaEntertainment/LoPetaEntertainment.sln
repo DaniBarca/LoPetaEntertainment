@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro.Editor", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditor.StandardEvents", "UnityEditor.StandardEvents.csproj", "{6800202F-4402-D405-F8CB-03DC7BD78B92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoPetaEntertainment.Editor", "LoPetaEntertainment.Editor.csproj", "{84313522-2D50-E515-2DBA-E2311FC1E7BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoPetaEntertainment.Editor.Plugins", "LoPetaEntertainment.Editor.Plugins.csproj", "{6A70D275-5FDA-5C2A-158B-C8E6FF67AC27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{6800202F-4402-D405-F8CB-03DC7BD78B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6800202F-4402-D405-F8CB-03DC7BD78B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6800202F-4402-D405-F8CB-03DC7BD78B92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84313522-2D50-E515-2DBA-E2311FC1E7BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84313522-2D50-E515-2DBA-E2311FC1E7BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84313522-2D50-E515-2DBA-E2311FC1E7BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84313522-2D50-E515-2DBA-E2311FC1E7BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A70D275-5FDA-5C2A-158B-C8E6FF67AC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A70D275-5FDA-5C2A-158B-C8E6FF67AC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A70D275-5FDA-5C2A-158B-C8E6FF67AC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A70D275-5FDA-5C2A-158B-C8E6FF67AC27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
