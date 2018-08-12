@@ -36,7 +36,6 @@ public class GoodGuy : MonoBehaviour {
         Vector3 v = transform.InverseTransformPoint(transform.position + v_keys);
         v.y = 0.0f;
         v.Normalize();
-        Debug.Log("keys:" + v_keys + "mouse:" + v_mouse + "v:" + v);
         animator.SetFloat("dx", v.x);
         animator.SetFloat("dy", v.z);
 
@@ -47,14 +46,6 @@ public class GoodGuy : MonoBehaviour {
             gun.Shoot();
         }
 
-    
-
-        
-
-
-
-
-
         //if (!Mathf.Approximately(0.0f, Input.GetAxis("Horizontal")) || !Mathf.Approximately(0.0f, Input.GetAxis("Vertical")) )
         //{
         //    transform.position += new Vector3(
@@ -63,8 +54,6 @@ public class GoodGuy : MonoBehaviour {
         //        Input.GetAxis("Vertical") * Time.deltaTime * speed
         //    );
         //}
-
-        
        
     }
 
@@ -79,5 +68,10 @@ public class GoodGuy : MonoBehaviour {
         {
             life = 0.0f;
         }
+    }
+
+    public void ReceiveDamage()
+    {
+        life -= 20.0f;
     }
 }

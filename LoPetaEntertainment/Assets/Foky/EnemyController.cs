@@ -11,11 +11,15 @@ public class EnemyController : MonoBehaviour {
     Transform target;
     NavMeshAgent agent;
 
+    bool doingDamage;
+
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+
+        StartCoroutine(DoDamageLoop());
 	}
 	
 	// Update is called once per frame
@@ -27,14 +31,33 @@ public class EnemyController : MonoBehaviour {
 
             if (distance <= agent.stoppingDistance)
             {
-                Debug.Log("IMMA ATACKIN");
                 anim.SetBool("isAttacking", true);
                 FaceTarget();
+                doingDamage = true;
             } else
             {
                 anim.SetBool("isAttacking", false);
+                doingDamage = false;
             }
         }
+    }
+
+    IEnumerator DoDamageLoop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1.0f);
+            if(doingDamage)
+            {
+                Debug.Log("asfdg");
+                DamagePlayer();
+            }
+        }
+    }
+
+    void DamagePlayer()
+    {
+        PlayerManager.instance.player.GetComponent<GoodGuy>().ReceiveDamage();
     }
 
     void FaceTarget()
