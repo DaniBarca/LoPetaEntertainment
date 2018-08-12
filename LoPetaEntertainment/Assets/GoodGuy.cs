@@ -8,6 +8,8 @@ public class GoodGuy : MonoBehaviour {
     ParticleSystem gun_ps;
     public GoodGuyGun gun;
 
+    public float life = 100.0f;
+
     void Start () {
         gun.OnEnemyHit += OnEnemyHit;
     }
@@ -35,5 +37,13 @@ public class GoodGuy : MonoBehaviour {
     void OnEnemyHit(BadGuy enemy)
     {
         enemy.Damage(gun.bulletDamage);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            life = 0.0f;
+        }
     }
 }

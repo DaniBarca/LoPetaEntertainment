@@ -61,14 +61,14 @@ public class HexTile : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "MainCharacter" || other.tag == "Enemy")
+		if (other.tag == "Player" || other.tag == "Enemy")
 		{
 			isStep = true;
 		}
 	}
 	
 	private void OnTriggerExit(Collider other)	{
-		if (other.tag == "MainCharacter" || other.tag == "Enemy")
+		if (other.tag == "Player" || other.tag == "Enemy")
 		{
 			isStep = false;
 		}

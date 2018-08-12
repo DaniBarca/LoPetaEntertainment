@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour {
 
 
     public float lookRadius = 10f;
-    static Animator anim;
+    private Animator anim;
     Transform target;
     NavMeshAgent agent;
 
@@ -20,18 +20,19 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= lookRadius)
         {
-            anim.SetBool("isWalking", true);
             agent.SetDestination(target.position);
 
             if (distance <= agent.stoppingDistance)
             {
-                anim.SetBool("isWalking", false);
+                Debug.Log("IMMA ATACKIN");
                 anim.SetBool("isAttacking", true);
                 FaceTarget();
+            } else
+            {
+                anim.SetBool("isAttacking", false);
             }
         }
     }
