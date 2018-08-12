@@ -46,6 +46,7 @@ public class GoodGuyGun : MonoBehaviour
         {
             gun_ps.Emit(1);
             ammo--;
+            ammo--;
             lastEmit = Time.time;
         }
     }

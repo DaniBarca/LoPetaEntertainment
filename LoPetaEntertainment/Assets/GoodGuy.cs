@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoodGuy : MonoBehaviour {
     public float speed = 10.0f;
@@ -14,12 +15,19 @@ public class GoodGuy : MonoBehaviour {
 
     public HealthBar healthBar;
 
+    public bool inmortal = false;
+
     void Start () {
         gun.OnEnemyHit += OnEnemyHit;
         animator = GetComponent<Animator>();
     }
 
 	void Update () {
+        if(life <= 0.0f)
+        {
+            SceneManager.LoadScene("MenuInicial");
+        }
+
         healthBar.curHealth = life;
         healthBar.curIce = gun.ammo;
 
@@ -38,8 +46,6 @@ public class GoodGuy : MonoBehaviour {
         v.Normalize();
         animator.SetFloat("dx", v.x);
         animator.SetFloat("dy", v.z);
-
-       
 
         if (Input.GetButton("Fire1"))
         {
@@ -72,6 +78,7 @@ public class GoodGuy : MonoBehaviour {
 
     public void ReceiveDamage()
     {
-        life -= 20.0f;
+        if(!inmortal)
+            life -= 20.0f;
     }
 }

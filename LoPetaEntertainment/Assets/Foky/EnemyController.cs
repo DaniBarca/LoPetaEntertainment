@@ -49,7 +49,6 @@ public class EnemyController : MonoBehaviour {
             yield return new WaitForSeconds(1.0f);
             if(doingDamage)
             {
-                Debug.Log("asfdg");
                 DamagePlayer();
             }
         }
