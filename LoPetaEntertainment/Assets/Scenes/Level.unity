@@ -10855,6 +10855,11 @@ Prefab:
       propertyPath: m_Name
       value: skimo
       objectReference: {fileID: 0}
+    - target: {fileID: 114873067142940928, guid: c3930fb13caa2674f8dfe80f974def5b,
+        type: 2}
+      propertyPath: inmortal
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3930fb13caa2674f8dfe80f974def5b, type: 2}
   m_IsPrefabAsset: 0
