@@ -17,6 +17,12 @@ public class GoodGuy : MonoBehaviour {
 
     public bool inmortal = false;
 
+    public AudioSource source;
+    public AudioSource source2;
+
+    public AudioClip reload;
+    public AudioClip shoot;
+
     void Start () {
         gun.OnEnemyHit += OnEnemyHit;
         animator = GetComponent<Animator>();
@@ -42,13 +48,27 @@ public class GoodGuy : MonoBehaviour {
         v_mouse.y = 0.0f;
         v_mouse.Normalize();    
         Vector3 v = transform.InverseTransformPoint(transform.position + v_keys);
+
+
+
         v.y = 0.0f;
         v.Normalize();
         animator.SetFloat("dx", v.x);
         animator.SetFloat("dy", v.z);
 
+        source.volume = v_keys.magnitude;
+
         if (Input.GetButton("Fire1"))
         {
+            //(int)((Time.realtimeSinceStartup * 1000.0f)) % 500 < ((int)(Time.deltaTime * 1000.0)) &&
+            if (gun.ammo>0 )
+            {
+                source2.volume = 1.0f;
+            }
+            else
+            {
+                source2.volume = 0.0f;
+            }
             gun.Shoot();
         }
 

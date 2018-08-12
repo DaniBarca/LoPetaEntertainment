@@ -13,6 +13,12 @@ public class GoodGuyGun : MonoBehaviour
 
     public float ammo = 100.0f;
 
+    GoodGuy guy ;
+    private void Start()
+    {
+        guy = GameObject.Find("skimo").GetComponent<GoodGuy>();
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -20,13 +26,16 @@ public class GoodGuyGun : MonoBehaviour
             Camera c = MainCamera.Instance.GetComponent<Camera>();
             Ray r = c.ScreenPointToRay(Input.mousePosition);
             RaycastHit rh;
-            Physics.Raycast(r, out rh, LayerMask.GetMask("Hex"));
+            if (Physics.Raycast(r, out rh, LayerMask.GetMask("Hex"))){
+                
+                guy.source2.PlayOneShot(guy.reload);
 
-            HexTile hitTile = rh.collider.gameObject.GetComponent<HexTile>();
-            hitTile.IVEBEENHIT();
+                HexTile hitTile = rh.collider.gameObject.GetComponent<HexTile>();
+                hitTile.IVEBEENHIT();
 
-            ammo += 50.0f;
-            ammo = Mathf.Clamp(ammo, 0.0f, 100.0f);
+                ammo += 50.0f;
+                ammo = Mathf.Clamp(ammo, 0.0f, 100.0f);
+            }
         }
     }
 

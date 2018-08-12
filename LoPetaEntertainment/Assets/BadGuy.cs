@@ -9,10 +9,13 @@ public class BadGuy : MonoBehaviour {
 	void Start () {}
 	void Update () {}
 
+    public AudioSource source;
+    public AudioClip focaHit;
     public void Damage(float strength)
     {
         life -= strength;
         alive = life > 0.0f;
+        source.PlayOneShot(focaHit);
         gameObject.SetActive(alive);
     }
 }
