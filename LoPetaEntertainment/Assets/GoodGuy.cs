@@ -8,8 +8,15 @@ public class GoodGuy : MonoBehaviour {
     ParticleSystem gun_ps;
     public GoodGuyGun gun;
 
-	void Start () {
+    private Vector3 targetPosition;
+    private Vector3 lastUpdatePosition;
+    private float lastUpdateTime;
+    private float LerpTime = 0.05f;
+
+    void Start () {
         gun.OnEnemyHit += OnEnemyHit;
+        targetPosition = transform.position;
+        lastUpdatePosition = targetPosition;
     }
 
 	void Update () {
@@ -20,18 +27,22 @@ public class GoodGuy : MonoBehaviour {
 
         if (!Mathf.Approximately(0.0f, Input.GetAxis("Horizontal")) || !Mathf.Approximately(0.0f, Input.GetAxis("Vertical")) )
         {
-            transform.position += new Vector3(
+            targetPosition += new Vector3(
                 Input.GetAxis("Horizontal") * Time.deltaTime * speed,
                 0.0f,
                 Input.GetAxis("Vertical") * Time.deltaTime * speed
             );
 
+            lastUpdatePosition = transform.position;
+            lastUpdateTime = Time.time;
             MainCamera.Instance.UpdateFollowCamera();
         }
 
         Vector3 world_mousePos = MainCamera.Instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition + Vector3.forward * MainCamera.Instance.transform.position.y);
         transform.LookAt(Vector3.Scale(Vector3.forward + Vector3.right, world_mousePos));
         transform.eulerAngles = Vector3.Scale(transform.eulerAngles, Vector3.up);
+
+        transform.position = Vector3.Lerp(lastUpdatePosition, targetPosition, (Time.time - lastUpdateTime) / LerpTime );
     }
 
     void OnEnemyHit(BadGuy enemy)
