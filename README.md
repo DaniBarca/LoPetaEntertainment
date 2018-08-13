@@ -1,5 +1,4 @@
-# LoPetaEntertainment
-Ludum Dare Challenge 42
+# ShowOut! - Ludum Dare Challenge 42
 
 This is the game we did in 48h for the Ludum Dare 42 with the theme "Running Out of Space".
 You can play it at https://danibarca.com/LoPetaEntertainment or download it for windows from releases.
