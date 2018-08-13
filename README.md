@@ -6,6 +6,8 @@ You can play it at https://danibarca.com/LoPetaEntertainment or download it for 
 
 Use left click to shoot enemies and right click over a tile to reload the gun, removing the tile in the process.
 
+[![SnowOut!](https://raw.githubusercontent.com/DaniBarca/LoPetaEntertainment/master/Readme%20Screenshot.png)](https://www.youtube.com/watch?v=tA_nCwqKjK8 "SowOut! Demo - Ludum Dare 42")
+
 --
 
 Daniel Barca
